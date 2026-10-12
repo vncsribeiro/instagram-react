@@ -30,7 +30,7 @@ function Post(props) {
                 <div class="curtidas">
                     <img src={props.likes} />
                     <div class="texto">
-                        Curtido por <strong>{props.likedBy}</strong> e <strong>{props.quantityLikes}</strong>
+                        Curtido por <strong>{props.likedBy}</strong> e <strong>outras {props.quantityLikes} pessoas</strong>
                     </div>
                 </div>
             </div>
@@ -40,16 +40,16 @@ function Post(props) {
 
 
 const posts = [
-    {user: "meowed", profileImg: "assets/img/meowed.svg", postImg: "assets/img/gato-telefone.svg", likesImg: "assets/img/respondeai.svg", likedByUser: "respondeai", quantity: "outras 101.523 pessoas"},
-    {user: "barked", profileImg: "assets/img/barked.svg", postImg: "assets/img/dog.svg", likesImg: "assets/img/adorable_animals.svg", likedByUser: "adorable_animals", quantity: "outras 99.159 pessoas"}
+    { user: "meowed", profileImg: "assets/img/meowed.svg", postImg: "assets/img/gato-telefone.svg", likesImg: "assets/img/respondeai.svg", likedByUser: "respondeai", quantity: "101.523" },
+    { user: "barked", profileImg: "assets/img/barked.svg", postImg: "assets/img/dog.svg", likesImg: "assets/img/adorable_animals.svg", likedByUser: "adorable_animals", quantity: "99.159" }
 ]
 
 export default function Posts() {
     return (
         <div class="posts">
-            
-            <Post userName="meowed" profileImage="assets/img/meowed.svg" postImage ="assets/img/gato-telefone.svg" likes ="assets/img/respondeai.svg" likedBy="respondeai" quantityLikes="outras 101.523 pessoas"/>
-            <Post userName="barked" profileImage="assets/img/barked.svg" postImage ="assets/img/dog.svg" likes ="assets/img/adorable_animals.svg" likedBy="adorable_animals" quantityLikes="outras 99.159 pessoas"/>
+            {posts.map(post => (
+                <Post userName={post.user} profileImage={post.profileImg} postImage={post.postImg} likes={post.likesImg} likedBy={post.likedByUser} quantityLikes={post.quantity} />
+            ))}
         </div>
     );
 }

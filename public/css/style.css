@@ -391,3 +391,11 @@ body {
     top: 4px;
   }
 }
+ion-icon {
+  visibility: visible;
+}
+
+.like {
+  color: red;
+  visibility: visible;
+}

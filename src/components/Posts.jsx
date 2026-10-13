@@ -24,7 +24,7 @@ function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img src={props.postImage} />
+                <img src={props.postImage} onClick={likePost}/>
             </div>
 
             <div class="fundo">
